@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>replit</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+
+</head>
+
+<body class="bg-gray-800">
+
+    <div class="container mx-auto p-4">
+        <!-- <p></p> -->
+
+        <div class="mb-3">
+            <div class="flex">
+                <p class="text-gray-400 font-bold text-sm select-none">500 PLN</p>
+                <div class="flex-grow"></div>
+                <p class="text-gray-400 font-medium text-sm select-none" id="sum500">0 PLN</p>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+                <button
+                    class="bg-blue-500 text-white font-semibold text-lg p-2 rounded-md shadow cursor-pointer select-none"
+                    onclick="minus(500)">-</button>
+                <input id="val500"
+                    class="bg-gray-700 text-white font-semibold text-lg p-2 rounded-md shadow text-center focus:ring-2 focus:border-0 focus:ring-blue-500 focus:outline-0"
+                    type="number" value="0" min="0" maxlength="6"
+                    onfocus="if($(this).val() === '0') { $(this).val('') }" />
+                <button
+                    class="bg-blue-500 text-white font-semibold text-lg p-2 rounded-md shadow cursor-pointer select-none"
+                    onclick="plus(500)">+</button>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="flex">
+                <p class="text-gray-400 font-bold text-sm select-none">200 PLN</p>
+                <div class="flex-grow"></div>
+                <p class="text-gray-400 font-medium text-sm select-none" id="sum200">0 PLN</p>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+                <button
+                    class="bg-blue-500 text-white font-semibold text-lg p-2 rounded-md shadow cursor-pointer select-none"
+                    onclick="minus(200)">-</button>
+                <input id="val200"
+                    class="bg-gray-700 text-white font-semibold text-lg p-2 rounded-md shadow text-center focus:ring-2 focus:border-0 focus:ring-blue-500 focus:outline-0"
+                    type="number" value="0" min="0" maxlength="6"
+                    onfocus="if($(this).val() === '0') { $(this).val('') }" />
+                <button
+                    class="bg-blue-500 text-white font-semibold text-lg p-2 rounded-md shadow cursor-pointer select-none"
+                    onclick="plus(200)">+</button>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="flex">
+                <p class="text-gray-400 font-bold text-sm select-none">100 PLN</p>
+                <div class="flex-grow"></div>
+                <p class="text-gray-400 font-medium text-sm select-none" id="sum100">0 PLN</p>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+                <button
+                    class="bg-blue-500 text-white font-semibold text-lg p-2 rounded-md shadow cursor-pointer select-none"
+                    onclick="minus(100)">-</button>
+                <input id="val100"
+                    class="bg-gray-700 text-white font-semibold text-lg p-2 rounded-md shadow text-center focus:ring-2 focus:border-0 focus:ring-blue-500 focus:outline-0"
+                    type="number" value="0" min="0" maxlength="6"
+                    onfocus="if($(this).val() === '0') { $(this).val('') }" />
+                <button
+                    class="bg-blue-500 text-white font-semibold text-lg p-2 rounded-md shadow cursor-pointer select-none"
+                    onclick="plus(100)">+</button>
+            </div>
+        </div>
+
+        <hr class="my-3 border-t border-gray-700">
+
+        <div class="mb-3">
+            <div class="flex">
+                <p class="text-gray-400 font-bold text-sm select-none">50 PLN</p>
+                <div class="flex-grow"></div>
+                <p class="text-gray-400 font-medium text-sm select-none" id="sum50">0 PLN</p>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+                <button
+                    class="bg-blue-500 text-white font-semibold text-lg p-2 rounded-md shadow cursor-pointer select-none"
+                    onclick="minus(50)">-</button>
+                <input id="val50"
+                    class="bg-gray-700 text-white font-semibold text-lg p-2 rounded-md shadow text-center focus:ring-2 focus:border-0 focus:ring-blue-500 focus:outline-0"
+                    type="number" value="0" min="0" maxlength="6"
+                    onfocus="if($(this).val() === '0') { $(this).val('') }" />
+                <button
+                    class="bg-blue-500 text-white font-semibold text-lg p-2 rounded-md shadow cursor-pointer select-none"
+                    onclick="plus(50)">+</button>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="flex">
+                <p class="text-gray-400 font-bold text-sm select-none">20 PLN</p>
+                <div class="flex-grow"></div>
+                <p class="text-gray-400 font-medium text-sm select-none" id="sum20">0 PLN</p>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+                <button
+                    class="bg-blue-500 text-white font-semibold text-lg p-2 rounded-md shadow cursor-pointer select-none"
+                    onclick="minus(20)">-</button>
+                <input id="val20"
+                    class="bg-gray-700 text-white font-semibold text-lg p-2 rounded-md shadow text-center focus:ring-2 focus:border-0 focus:ring-blue-500 focus:outline-0"
+                    type="number" value="0" min="0" maxlength="6"
+                    onfocus="if($(this).val() === '0') { $(this).val('') }" />
+                <button
+                    class="bg-blue-500 text-white font-semibold text-lg p-2 rounded-md shadow cursor-pointer select-none"
+                    onclick="plus(20)">+</button>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="flex">
+                <p class="text-gray-400 font-bold text-sm select-none">10 PLN</p>
+                <div class="flex-grow"></div>
+                <p class="text-gray-400 font-medium text-sm select-none" id="sum10">0 PLN</p>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+                <button
+                    class="bg-blue-500 text-white font-semibold text-lg p-2 rounded-md shadow cursor-pointer select-none"
+                    onclick="minus(10)">-</button>
+                <input id="val10"
+                    class="bg-gray-700 text-white font-semibold text-lg p-2 rounded-md shadow text-center focus:ring-2 focus:border-0 focus:ring-blue-500 focus:outline-0"
+                    type="number" value="0" min="0" maxlength="6"
+                    onfocus="if($(this).val() === '0') { $(this).val('') }" />
+                <button
+                    class="bg-blue-500 text-white font-semibold text-lg p-2 rounded-md shadow cursor-pointer select-none"
+                    onclick="plus(10)">+</button>
+            </div>
+        </div>
+
+        <hr class="my-3 border-t border-gray-700">
+
+        <div class="mb-3">
+            <div class="flex">
+                <p class="text-gray-400 font-bold text-sm select-none">5 PLN</p>
+                <div class="flex-grow"></div>
+                <p class="text-gray-400 font-medium text-sm select-none" id="sum5">0 PLN</p>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+                <button
+                    class="bg-blue-500 text-white font-semibold text-lg p-2 rounded-md shadow cursor-pointer select-none"
+                    onclick="minus(5)">-</button>
+                <input id="val5"
+                    class="bg-gray-700 text-white font-semibold text-lg p-2 rounded-md shadow text-center focus:ring-2 focus:border-0 focus:ring-blue-500 focus:outline-0"
+                    type="number" value="0" min="0" maxlength="6"
+                    onfocus="if($(this).val() === '0') { $(this).val('') }" />
+                <button
+                    class="bg-blue-500 text-white font-semibold text-lg p-2 rounded-md shadow cursor-pointer select-none"
+                    onclick="plus(5)">+</button>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="flex">
+                <p class="text-gray-400 font-bold text-sm select-none">2 PLN</p>
+                <div class="flex-grow"></div>
+                <p class="text-gray-400 font-medium text-sm select-none" id="sum2">0 PLN</p>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+                <button
+                    class="bg-blue-500 text-white font-semibold text-lg p-2 rounded-md shadow cursor-pointer select-none"
+                    onclick="minus(2)">-</button>
+                <input id="val2"
+                    class="bg-gray-700 text-white font-semibold text-lg p-2 rounded-md shadow text-center focus:ring-2 focus:border-0 focus:ring-blue-500 focus:outline-0"
+                    type="number" value="0" min="0" maxlength="6"
+                    onfocus="if($(this).val() === '0') { $(this).val('') }" />
+                <button
+                    class="bg-blue-500 text-white font-semibold text-lg p-2 rounded-md shadow cursor-pointer select-none"
+                    onclick="plus(2)">+</button>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="flex">
+                <p class="text-gray-400 font-bold text-sm select-none">1 PLN</p>
+                <div class="flex-grow"></div>
+                <p class="text-gray-400 font-medium text-sm select-none" id="sum1">0 PLN</p>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+                <button
+                    class="bg-blue-500 text-white font-semibold text-lg p-2 rounded-md shadow cursor-pointer select-none"
+                    onclick="minus(1)">-</button>
+                <input id="val1"
+                    class="bg-gray-700 text-white font-semibold text-lg p-2 rounded-md shadow text-center focus:ring-2 focus:border-0 focus:ring-blue-500 focus:outline-0"
+                    type="number" value="0" min="0" maxlength="6"
+                    onfocus="if($(this).val() === '0') { $(this).val('') }" />
+                <button
+                    class="bg-blue-500 text-white font-semibold text-lg p-2 rounded-md shadow cursor-pointer select-none"
+                    onclick="plus(1)">+</button>
+            </div>
+        </div>
+
+        <hr class="my-3 border-t border-gray-700">
+
+        <div class="mb-3">
+            <div class="flex">
+                <p class="text-gray-400 font-bold text-sm select-none">0.50 PLN</p>
+                <div class="flex-grow"></div>
+                <p class="text-gray-400 font-medium text-sm select-none" id="sum050">0 PLN</p>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+                <button
+                    class="bg-blue-500 text-white font-semibold text-lg p-2 rounded-md shadow cursor-pointer select-none"
+                    onclick="minus(0.50)">-</button>
+                <input id="val050"
+                    class="bg-gray-700 text-white font-semibold text-lg p-2 rounded-md shadow text-center focus:ring-2 focus:border-0 focus:ring-blue-500 focus:outline-0"
+                    type="number" value="0" min="0" maxlength="6"
+                    onfocus="if($(this).val() === '0') { $(this).val('') }" />
+                <button
+                    class="bg-blue-500 text-white font-semibold text-lg p-2 rounded-md shadow cursor-pointer select-none"
+                    onclick="plus(0.50)">+</button>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="flex">
+                <p class="text-gray-400 font-bold text-sm select-none">0.20 PLN</p>
+                <div class="flex-grow"></div>
+                <p class="text-gray-400 font-medium text-sm select-none" id="sum020">0 PLN</p>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+                <button
+                    class="bg-blue-500 text-white font-semibold text-lg p-2 rounded-md shadow cursor-pointer select-none"
+                    onclick="minus(0.20)">-</button>
+                <input id="val020"
+                    class="bg-gray-700 text-white font-semibold text-lg p-2 rounded-md shadow text-center focus:ring-2 focus:border-0 focus:ring-blue-500 focus:outline-0"
+                    type="number" value="0" min="0" maxlength="6"
+                    onfocus="if($(this).val() === '0') { $(this).val('') }" />
+                <button
+                    class="bg-blue-500 text-white font-semibold text-lg p-2 rounded-md shadow cursor-pointer select-none"
+                    onclick="plus(0.20)">+</button>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="flex">
+                <p class="text-gray-400 font-bold text-sm select-none">0.10 PLN</p>
+                <div class="flex-grow"></div>
+                <p class="text-gray-400 font-medium text-sm select-none" id="sum010">0 PLN</p>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+                <button
+                    class="bg-blue-500 text-white font-semibold text-lg p-2 rounded-md shadow cursor-pointer select-none"
+                    onclick="minus(0.10)">-</button>
+                <input id="val010"
+                    class="bg-gray-700 text-white font-semibold text-lg p-2 rounded-md shadow text-center focus:ring-2 focus:border-0 focus:ring-blue-500 focus:outline-0"
+                    type="number" value="0" min="0" maxlength="6"
+                    onfocus="if($(this).val() === '0') { $(this).val('') }" />
+                <button
+                    class="bg-blue-500 text-white font-semibold text-lg p-2 rounded-md shadow cursor-pointer select-none"
+                    onclick="plus(0.10)">+</button>
+            </div>
+        </div>
+
+        <hr class="my-3 border-t border-gray-700">
+
+        <div class="mb-3">
+            <div class="flex">
+                <p class="text-gray-400 font-bold text-sm select-none">0.05 PLN</p>
+                <div class="flex-grow"></div>
+                <p class="text-gray-400 font-medium text-sm select-none" id="sum005">0 PLN</p>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+                <button
+                    class="bg-blue-500 text-white font-semibold text-lg p-2 rounded-md shadow cursor-pointer select-none"
+                    onclick="minus(0.05)">-</button>
+                <input id="val005"
+                    class="bg-gray-700 text-white font-semibold text-lg p-2 rounded-md shadow text-center focus:ring-2 focus:border-0 focus:ring-blue-500 focus:outline-0"
+                    type="number" value="0" min="0" maxlength="6"
+                    onfocus="if($(this).val() === '0') { $(this).val('') }" />
+                <button
+                    class="bg-blue-500 text-white font-semibold text-lg p-2 rounded-md shadow cursor-pointer select-none"
+                    onclick="plus(0.05)">+</button>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="flex">
+                <p class="text-gray-400 font-bold text-sm select-none">0.02 PLN</p>
+                <div class="flex-grow"></div>
+                <p class="text-gray-400 font-medium text-sm select-none" id="sum002">0 PLN</p>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+                <button
+                    class="bg-blue-500 text-white font-semibold text-lg p-2 rounded-md shadow cursor-pointer select-none"
+                    onclick="minus(0.02)">-</button>
+                <input id="val002"
+                    class="bg-gray-700 text-white font-semibold text-lg p-2 rounded-md shadow text-center focus:ring-2 focus:border-0 focus:ring-blue-500 focus:outline-0"
+                    type="number" value="0" min="0" maxlength="6"
+                    onfocus="if($(this).val() === '0') { $(this).val('') }" />
+                <button
+                    class="bg-blue-500 text-white font-semibold text-lg p-2 rounded-md shadow cursor-pointer select-none"
+                    onclick="plus(0.02)">+</button>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="flex">
+                <p class="text-gray-400 font-bold text-sm select-none">0.01 PLN</p>
+                <div class="flex-grow"></div>
+                <p class="text-gray-400 font-medium text-sm select-none" id="sum001">0 PLN</p>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+                <button
+                    class="bg-blue-500 text-white font-semibold text-lg p-2 rounded-md shadow cursor-pointer select-none"
+                    onclick="minus(0.01)">-</button>
+                <input id="val001"
+                    class="bg-gray-700 text-white font-semibold text-lg p-2 rounded-md shadow text-center focus:ring-2 focus:border-0 focus:ring-blue-500 focus:outline-0"
+                    type="number" value="0" min="0" maxlength="6"
+                    onfocus="if($(this).val() === '0') { $(this).val('') }" />
+                <button
+                    class="bg-blue-500 text-white font-semibold text-lg p-2 rounded-md shadow cursor-pointer select-none"
+                    onclick="plus(0.01)">+</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="sticky flex flex-row bottom-0 p-4 bg-gray-900">
+        <div class="flex flex-row gap-2">
+            <button id="btn-clear"
+                class="text-gray-400 p-1 text-xs bg-gray-900 hover:bg-gray-800 transition duration-150 rounded-md"
+                onclick="resetAll()"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-eraser">
+                    <path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21" />
+                    <path d="M22 21H7" />
+                    <path d="m5 11 9 9" />
+                </svg></button>
+            <button id="btn-copy"
+                class="text-gray-400 p-1 text-xs bg-gray-900 hover:bg-gray-800 transition duration-150 rounded-md"
+                onclick="copyAll()"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-copy">
+                    <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
+                    <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
+                </svg></button>
+
+        </div>
+        <div class="flex-grow"></div>
+        <p class="text-gray-400 font-semibold text-lg text-end">Suma: <span id="total" class="font-regular">0 PLN</span>
+        </p>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
