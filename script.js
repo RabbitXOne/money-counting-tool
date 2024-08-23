@@ -67,7 +67,7 @@ function updateTotal() {
 }
 
 function plus(value) {
-    if (value >= 1) {
+    if (value >= 1 && parseInt($('#val' + value).val()) < 999999) {
         $('#val' + value).val(parseInt($('#val' + value).val()) + 1)
         updateTotal()
     } else {
@@ -111,8 +111,13 @@ function minus(value) {
 $('input').on('input', function() {
     if (!$(this).prop('id').includes('val')) { return; }
 
-    $(this).val($(this).val().replace(/[^0-9]/g, ''));
+    if($(this).val().length > 6) {
+        $(this).val($(this).val().slice(0, 6));
+    }
+
+$(this).val($(this).val().replace(/[^0-9]/g, ''));
     if (!$(this).val() === '') { updateTotal() }
+    
 });
 
 $('input').on('blur', function() {
